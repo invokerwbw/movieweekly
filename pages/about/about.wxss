@@ -1,0 +1,35 @@
+.info {
+  font-weight: bold;
+  font-size: 60rpx;
+}
+
+.container {
+  background-color: #eee;
+  height: 100vh;
+  text-align: center;
+}
+
+.container image {
+  margin-bottom: 60px;
+}
+
+.container text {
+  display: block;
+  margin-bottom: 60px;
+}
+
+/* 小程序所有设备宽高均为750rpx */
+/* 小程序视觉设计稿用iphone6机型，因为ip6宽度为375px，与rpx正好1:2 */
+.about-banner {
+  width: 375rpx;
+  height: 375rpx;
+  border-radius: 50%;
+}
+
+.nav-default {
+  color: blue;
+}
+
+.nav-hover {
+  color: red;
+}

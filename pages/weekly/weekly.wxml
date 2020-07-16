@@ -1,0 +1,49 @@
+<!-- <view class="flex-container">
+	<text>本周推荐</text>
+	<image src="{{thisWeekMovie.imagePath}}"></image>
+	<text>{{thisWeekMovie.name}}</text>
+	<text>点评：{{thisWeekMovie.comment}}</text>
+	<text wx:if="{{thisWeekMovie.isHighlyRecommended}}" style="font-size:32rpx; color:red;">强烈推荐</text>
+</view> -->
+
+<!-- <view class="">
+
+	<swiper class="movie-swiper" indicator-dots="true" previous-margin="50rpx" next-margin="50rpx" current="{{currentIndex}}">
+		<swiper-item class="movie" wx:for="{{weeklyMovieList}}">
+			<view class="flex-container movie-card" bindtap="f1" data-movie-id="{{item.id}}">
+				<image class="movie-image" src="{{item.imagePath}}"></image>
+				<text>{{item.id}}</text>
+				<text>第{{index + 1}}周：{{item.name}}</text>
+				<text>点评：{{item.comment}}</text>
+				<text wx:if="{{item.isHighlyRecommended}}" style="font-size:32rpx; color:red;">强烈推荐</text>
+
+				<text catchtap="f0" wx:if="{{index < (weeklyMovieList.length - 1)}}" class="return-button">返回本周</text>
+			</view>
+		</swiper-item>
+	</swiper>
+
+</view> -->
+
+<view class="">
+
+	<swiper class="movie-swiper" indicator-dots="true" previous-margin="50rpx" next-margin="50rpx" current="{{currentIndex}}">
+		<swiper-item class="movie" wx:for="{{subjects}}" wx:key="rank">
+			<view class="flex-container movie-card" bindtap="f1" data-movie-id="{{item.subject.id}}">
+				<image class="movie-image" src="{{item.subject.images.small}}"></image>
+				<text>第{{index + 1}}位</text>
+				<view>
+					<text>{{item.subject.title}}</text>
+					<text wx:if="{{item.subject.title != item.subject.original_title}}" >{{'/' + item.subject.original_title}}</text>
+					<text>({{item.subject.rating.average}}分)</text>
+				</view>
+				<text>看过：{{item.subject.collect_count}}</text>
+				<text wx:if="{{item.delta > 0}}" style="font-size:32rpx; color:red;">上升{{item.delta}}位</text>
+				<text wx:elif="{{item.delta < 0}}" style="font-size:32rpx; color:green;">下降{{-item.delta}}位</text>
+				<text wx:else style="font-size:32rpx; color:gray;">排名无变化</text>
+
+				<text catchtap="f0" wx:if="{{index > 0}}" class="return-button">返回首位</text>
+			</view>
+		</swiper-item>
+	</swiper>
+
+</view>
